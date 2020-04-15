@@ -1,11 +1,11 @@
 /* global TextEncoder */
 import {assert} from '@loaders.gl/loader-utils';
-import {toArrayBuffer as bufferToArrayBuffer} from '../node/utils/to-array-buffer.node';
+import * as utils from '../node/utils/to-array-buffer.node';
 
 export function toArrayBuffer(data) {
-  if (bufferToArrayBuffer) {
+  if (utils.toArrayBuffer) {
     // TODO - per docs we should just be able to call buffer.buffer, but there are issues
-    data = bufferToArrayBuffer(data);
+    data = utils.toArrayBuffer(data);
   }
 
   if (data instanceof ArrayBuffer) {

@@ -2,7 +2,7 @@
 /* global __VERSION__ */
 /* global fetch, document */
 import {global, isBrowser, isWorker} from '../env-utils/globals';
-import {requireFromFile, requireFromString} from './require-utils.node';
+import * as requireUtils from './require-utils.node';
 import assert from '../env-utils/assert';
 
 // TODO - unpkg.com doesn't seem to have a `latest` specifier for alpha releases...
@@ -60,7 +60,7 @@ async function loadLibraryFromFile(libraryUrl) {
   }
 
   if (!isBrowser) {
-    return requireFromFile(libraryUrl);
+    return requireUtils.requireFromFile(libraryUrl);
   }
   if (isWorker) {
     /* global importScripts */
@@ -96,7 +96,7 @@ async function loadScriptFromFile(libraryUrl) {
 // we could create a`LibraryLoader` or`ModuleLoader`
 function loadLibraryFromString(scriptSource, id) {
   if (!isBrowser) {
-    return requireFromString(scriptSource, id);
+    return requireUtils.requireFromString(scriptSource, id);
   }
 
   if (isWorker) {
