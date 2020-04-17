@@ -1475,12 +1475,6 @@
     "@babel/runtime" "^7.3.1"
     "@probe.gl/stats" "^3.2.1"
 
-"@loaders.gl/loader-utils@file:modules/loader-utils":
-  version "2.1.0-beta.2"
-  dependencies:
-    "@babel/runtime" "^7.3.1"
-    "@probe.gl/stats" "^3.2.1"
-
 "@loaders.gl/math@2.1.1", "@loaders.gl/math@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@loaders.gl/math/-/math-2.1.1.tgz#981a1b43711ab093bd4acd17ad7a2552efb2c6f3"
